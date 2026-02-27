@@ -1,0 +1,33 @@
+- procedural
+- map based
+- interactive game
+- tower defense
+
+
+- procedural pathing
+- Unity version 6.046f1
+- topdown 2d
+
+******************************
+
+TO DO:
+
+G-path generation
+G-enemy pathing
+K-enemy Parent class
+K-tower parent class
+
+******************************
+
+STYLE GUIDE;
+
+void fuc () {
+}
+
+int wordWord
+
+class {
+    void func {...}
+}
+
+communication : Discord
