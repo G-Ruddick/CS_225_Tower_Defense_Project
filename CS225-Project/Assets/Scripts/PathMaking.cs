@@ -13,12 +13,17 @@ directions:
 */
 
 public class NewMonoBehaviourScript : MonoBehaviour {
-    public int mapHeight = 15;
-    public int mapWidth = 18;
+    public GameObject Grass_Tile;
+    public GameObject Path_Tile;
+
+    public int mapHeight = 8;
+    public int mapWidth = 10;
+    public int[,] map;
 
     void Start() {
-        int[,] map = pathGeneration(mapHeight,mapWidth);
+        map = pathGeneration(mapHeight,mapWidth);
         displayMap(map);
+        mapTileCreation(map);
     }
 
     int[,] pathGeneration(int height, int width) {
@@ -27,7 +32,7 @@ public class NewMonoBehaviourScript : MonoBehaviour {
         int pathLength = 0;
         
         // recreates pathing until long enough
-        while (pathLength < height * width / 8) {
+        while (pathLength < height * width / 6) {
             validPath = false;
             pathLength = 0;
 
@@ -74,7 +79,12 @@ public class NewMonoBehaviourScript : MonoBehaviour {
             
             // creating the path until its the correct length
             while (!validPath) {
-                direction = Random.Range(1 , 5);
+                // picking a direction but is inherently more likely to 
+                // pick the same direction
+                if (Random.Range(1,4) == 2) {}
+                else {
+                    direction = Random.Range(1 , 5);
+                }
 
                 // checking for the edge and stopping current loop
                 if ((currentTile[0] == 0 && direction == 3) ||
@@ -148,5 +158,18 @@ public class NewMonoBehaviourScript : MonoBehaviour {
         }
 
         Debug.Log(output);
+    }
+
+    void mapTileCreation(int[,] inputMap) {
+        for (int r = 0; r < mapHeight; r++) {
+            for (int c = 0; c < mapWidth; c++) {
+                if (inputMap[r,c] == 0) {
+                    Instantiate(Grass_Tile, new Vector3(10f * c, 0, -10f * r), Quaternion.identity);
+                }
+                else {
+                    Instantiate(Path_Tile, new Vector3(10f * c, 0, -10f * r), Quaternion.identity);
+                }
+            }
+        }
     }
 }
