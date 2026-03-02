@@ -10,12 +10,23 @@
 
 ******************************
 
-TO DO:
+COMPLETED:
 
 G-path generation
+
+TO DO:
+
 G-enemy pathing
 K-enemy Parent class
 K-tower parent class
+
+- UI
+- Map Display
+- player input
+- Health / money
+- tower actions
+- enemy spawn and despawn
+- tower placement and removal
 
 ******************************
 
