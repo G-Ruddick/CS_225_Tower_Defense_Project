@@ -16,12 +16,12 @@ G-path generation
 
 TO DO:
 
+G-Map Display
 G-enemy pathing
 K-enemy Parent class
 K-tower parent class
 
 - UI
-- Map Display
 - player input
 - Health / money
 - tower actions

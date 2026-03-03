@@ -12,7 +12,7 @@ directions:
     -4. starting Down
 */
 
-public class NewMonoBehaviourScript : MonoBehaviour {
+public class PathMaking : MonoBehaviour {
     public GameObject Grass_Tile;
     public GameObject Path_Tile;
 
