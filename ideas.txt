@@ -15,19 +15,19 @@ COMPLETED:
 G-path generation
 K-basic tower parent & child class (can add to later)
 K-basic enemy Parent & child class (can add to later)
+G-Map Display
+K- tower actions
 
 TO DO:
 
-G-Map Display
 G-enemy pathing
+G- enemy spawn and despawn
+G- UI
 K-Need to fix towers not hitting moving enemies
+K- player input
+K- tower placement and removal
+K- Health / money
 
-- UI
-- player input
-- Health / money
-- tower actions
-- enemy spawn and despawn
-- tower placement and removal
 
 ******************************
 
@@ -45,3 +45,14 @@ class {
 }
 
 communication : Discord
+
+
+********************************
+
+POWERPOINT:
+
+Enemy and tower classes
+Path generation algorithm
+enemy and tower behavors
+Unity/C#
+Player input and data
