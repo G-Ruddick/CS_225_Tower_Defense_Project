@@ -6,19 +6,25 @@ directions:
     2. Left
     3. Up
     4. Down
-    -1. starting Right
-    -2. starting Left
-    -3. starting Up
-    -4. starting Down
+    -1. starting/ending Right
+    -2. starting/ending Left
+    -3. starting/ending Up
+    -4. starting/ending Down
 */
 
 public class PathMaking : MonoBehaviour {
     public GameObject Grass_Tile;
-    public GameObject Path_Tile;
+    public GameObject Path_Tile_UD;
+    public GameObject Path_Tile_LR;
+    public GameObject Path_Tile_UR;
+    public GameObject Path_Tile_UL;
+    public GameObject Path_Tile_DR;
+    public GameObject Path_Tile_DL;
 
     public int mapHeight = 8;
     public int mapWidth = 10;
     public int[,] map;
+    public int[] startingTile = new int[2];
 
     void Start() {
         map = pathGeneration(mapHeight,mapWidth);
@@ -32,7 +38,7 @@ public class PathMaking : MonoBehaviour {
         int pathLength = 0;
         
         // recreates pathing until long enough
-        while (pathLength < height * width / 6) {
+        while (pathLength < height * width / 6 || pathLength > height * width / 3) {
             validPath = false;
             pathLength = 0;
 
@@ -61,6 +67,8 @@ public class PathMaking : MonoBehaviour {
             }
 
             tileMap[currentTile[0] , currentTile[1]] = direction;
+            startingTile[0] = currentTile[0];
+            startingTile[1] = currentTile[1];
             
             // moving the current position
             if (direction == -1) {
@@ -75,6 +83,7 @@ public class PathMaking : MonoBehaviour {
             else if (direction == -4) {
                 currentTile[0]++;
             }
+
             pathLength++;
             
             // creating the path until its the correct length
@@ -91,7 +100,7 @@ public class PathMaking : MonoBehaviour {
                 (currentTile[0] == height - 1 && direction == 4) ||
                 (currentTile[1] == 0 && direction == 2) ||
                 (currentTile[1] == width - 1 && direction == 1)) {
-                    tileMap[currentTile[0], currentTile[1]] = direction;
+                    tileMap[currentTile[0], currentTile[1]] = -direction;
                     validPath = true;
                     continue;
                 }
@@ -161,15 +170,96 @@ public class PathMaking : MonoBehaviour {
     }
 
     void mapTileCreation(int[,] inputMap) {
+        // Creating grass tile objects
         for (int r = 0; r < mapHeight; r++) {
             for (int c = 0; c < mapWidth; c++) {
                 if (inputMap[r,c] == 0) {
                     Instantiate(Grass_Tile, new Vector3(10f * c, 0, -10f * r), Quaternion.identity);
                 }
-                else {
-                    Instantiate(Path_Tile, new Vector3(10f * c, 0, -10f * r), Quaternion.identity);
-                }
             }
         }
+
+        int[] nextTile = new int[2];
+
+        int[] currentTile = new int[2];
+        currentTile[0] = startingTile[0];
+        currentTile[1] = startingTile[1];
+
+        // Starting tile
+        Vector3 tilePosition = new Vector3(10f * currentTile[1], 0, -10f * currentTile[0]);
+        if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 1 || 
+        Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 2 ) {
+            Instantiate(Path_Tile_LR, tilePosition, Quaternion.identity);
+        }
+        else {
+            Instantiate(Path_Tile_UD, tilePosition, Quaternion.identity);
+        }
+
+        // creating tile path objects
+        do {
+            nextTile[0] = currentTile[0];
+            nextTile[1] = currentTile[1];
+
+            if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 1) {
+                nextTile[1]++;
+                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+
+                if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 1) {
+                    Instantiate(Path_Tile_LR, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 3) {
+                    Instantiate(Path_Tile_DR, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 4) {
+                    Instantiate(Path_Tile_UR, tilePosition, Quaternion.identity);
+                }
+            }
+            else if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 2) {
+                nextTile[1]--;
+                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+
+                if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 2) {
+                    Instantiate(Path_Tile_LR, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 3) {
+                    Instantiate(Path_Tile_DL, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 4) {
+                    Instantiate(Path_Tile_UL, tilePosition, Quaternion.identity);
+                }
+            }
+            else if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 3) {
+                nextTile[0]--;
+                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+
+                if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 1) {
+                    Instantiate(Path_Tile_UL, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 2) {
+                    Instantiate(Path_Tile_UR, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 3) {
+                    Instantiate(Path_Tile_UD, tilePosition, Quaternion.identity);
+                }
+            }
+            else {
+                nextTile[0]++;
+                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+
+                if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 1) {
+                    Instantiate(Path_Tile_DL, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 2) {
+                    Instantiate(Path_Tile_DR, tilePosition, Quaternion.identity);
+                }
+                else if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 4) {
+                    Instantiate(Path_Tile_UD, tilePosition, Quaternion.identity);
+                }
+            }
+
+            currentTile[0] = nextTile[0];
+            currentTile[1] = nextTile[1];
+        }
+        while (inputMap[currentTile[0], currentTile[1]] > 0);
     }
 }

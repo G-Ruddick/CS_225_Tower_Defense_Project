@@ -1,5 +1,3 @@
-// Being Used by Glen Ruddick
-
 using UnityEngine;
 
 public class CameraAspectRatio : MonoBehaviour {

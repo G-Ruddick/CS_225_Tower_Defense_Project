@@ -152,9 +152,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grass_Tile: {fileID: 8839426446554948702, guid: a1841f95e1edd12feaa4088a7216c8fc, type: 3}
-  Path_Tile: {fileID: 8839426446554948702, guid: 519cf6009cb369267b6294a23dc38092, type: 3}
+  Path_Tile_UD: {fileID: 8839426446554948702, guid: 519cf6009cb369267b6294a23dc38092, type: 3}
+  Path_Tile_LR: {fileID: 8839426446554948702, guid: f8a3cbf7c0cedbb76b0e84e7b68a42a3, type: 3}
+  Path_Tile_UR: {fileID: 8839426446554948702, guid: 188541b0753ea0f81811adcb3e4041f8, type: 3}
+  Path_Tile_UL: {fileID: 8839426446554948702, guid: f0130a4f48de2ec21819496824c6a776, type: 3}
+  Path_Tile_DR: {fileID: 8839426446554948702, guid: cf53a15feb83ea90cbe2e1d8e20e7d2b, type: 3}
+  Path_Tile_DL: {fileID: 8839426446554948702, guid: 9a2ad4187f12f62fba7d806e36c5e92c, type: 3}
   mapHeight: 8
   mapWidth: 10
+  startingTile: 0000000000000000
 --- !u!64 &94754463
 MeshCollider:
   m_ObjectHideFlags: 0
