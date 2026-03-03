@@ -13,13 +13,14 @@
 COMPLETED:
 
 G-path generation
+K-basic tower parent & child class (can add to later)
+K-basic enemy Parent & child class (can add to later)
 
 TO DO:
 
 G-Map Display
 G-enemy pathing
-K-enemy Parent class
-K-tower parent class
+K-Need to fix towers not hitting moving enemies
 
 - UI
 - player input
