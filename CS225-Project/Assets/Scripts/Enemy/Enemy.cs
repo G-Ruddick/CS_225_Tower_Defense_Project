@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         enemyRenderer.material.color = originalColor;
     }
 
-    private void die()
+    public void die()
     {
         Debug.Log(gameObject.name + " died");
 

@@ -26,7 +26,7 @@ public class PathMaking : MonoBehaviour {
     public int[,] map;
     public int[] startingTile = new int[2];
 
-    void Start() {
+    void Awake() {
         map = pathGeneration(mapHeight,mapWidth);
         displayMap(map);
         mapTileCreation(map);
