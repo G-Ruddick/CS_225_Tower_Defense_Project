@@ -158,6 +158,7 @@ MonoBehaviour:
   Path_Tile_UL: {fileID: 8839426446554948702, guid: f0130a4f48de2ec21819496824c6a776, type: 3}
   Path_Tile_DR: {fileID: 8839426446554948702, guid: cf53a15feb83ea90cbe2e1d8e20e7d2b, type: 3}
   Path_Tile_DL: {fileID: 8839426446554948702, guid: 9a2ad4187f12f62fba7d806e36c5e92c, type: 3}
+  Start_Tile: {fileID: 8839426446554948702, guid: 630bbf6ab57c4f579af3e926e055b2cd, type: 3}
   mapHeight: 8
   mapWidth: 10
   startingTile: 0000000000000000
@@ -244,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94754461}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -581,5 +582,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1121609411}
   - {fileID: 1839188238}
-  - {fileID: 94754466}
   - {fileID: 911813344}
+  - {fileID: 94754466}
