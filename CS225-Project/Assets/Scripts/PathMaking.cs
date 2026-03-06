@@ -20,6 +20,7 @@ public class PathMaking : MonoBehaviour {
     public GameObject Path_Tile_UL;
     public GameObject Path_Tile_DR;
     public GameObject Path_Tile_DL;
+    public GameObject Start_Tile;
 
     public int mapHeight = 8;
     public int mapWidth = 10;
@@ -194,6 +195,7 @@ public class PathMaking : MonoBehaviour {
         else {
             Instantiate(Path_Tile_UD, tilePosition, Quaternion.identity);
         }
+        Instantiate(Start_Tile, tilePosition + new Vector3(0, 0.01f, 0), Quaternion.identity);
 
         // creating tile path objects
         do {
