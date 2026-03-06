@@ -17,11 +17,11 @@ K-basic tower parent & child class (can add to later)
 K-basic enemy Parent & child class (can add to later)
 G-Map Display
 K- tower actions
+G-enemy spawn and despawn
+G-enemy pathing
 
 TO DO:
 
-G-enemy pathing
-G- enemy spawn and despawn
 G- UI
 K-Need to fix towers not hitting moving enemies
 K- player input
