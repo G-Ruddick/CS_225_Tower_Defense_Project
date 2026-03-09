@@ -83,10 +83,14 @@ public abstract class TowerBase : MonoBehaviour
     {
         if (target == null) return;
 
-        Enemy enemyComponent = target.GetComponent<Enemy>();
+        Enemy enemyComponent = target.GetComponent<Enemy>();         //remove once static enemies are gone
+        EnemyBase enemy = target.GetComponent<EnemyBase>();
+
+        if (enemyComponent != null)         //remove once static enemies are gone
+            enemyComponent.takeDamage(damage);
 
         if (enemyComponent != null)
-            enemyComponent.takeDamage(damage);
+            enemy.takeDamage(damage);
     }
 
     protected virtual void OnDrawGizmosSelected()
