@@ -16,17 +16,16 @@ G-path generation
 K-basic tower parent & child class (can add to later)
 K-basic enemy Parent & child class (can add to later)
 G-Map Display
-K- tower actions
+K-tower actions
 G-enemy spawn and despawn
 G-enemy pathing
+K-tower placement/basic player input (play can place down towers)
+K-tower money/enemy drops money
 
 TO DO:
 
 G- UI
-K-Need to fix towers not hitting moving enemies
-K- player input
-K- tower placement and removal
-K- Health / money
+K- tower removal
 
 
 ******************************

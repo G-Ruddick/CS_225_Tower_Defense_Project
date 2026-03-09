@@ -89,7 +89,7 @@ public abstract class TowerBase : MonoBehaviour
         if (enemyComponent != null)         //remove once static enemies are gone
             enemyComponent.takeDamage(damage);
 
-        if (enemyComponent != null)
+        if (enemy != null)
             enemy.takeDamage(damage);
     }
 
