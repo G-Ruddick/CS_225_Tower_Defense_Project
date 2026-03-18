@@ -19,14 +19,14 @@ G-Map Display
 K-tower actions
 G-enemy spawn and despawn
 G-enemy pathing
-K-tower placement/basic player input (play can place down towers)
-K-tower money/enemy drops money
+K-tower placement/basic player input (player can place down towers and delete them)
+K-tower money system
+K-tower projectile shooting with visible bullet path
 
 TO DO:
 
 G- UI
-K- tower removal
-
+K-enemies drop money
 
 ******************************
 
