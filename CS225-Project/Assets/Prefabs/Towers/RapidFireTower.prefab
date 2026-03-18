@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7238044442645922088}
   - component: {fileID: 3850606713107457370}
   - component: {fileID: 692115613893614753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -119,7 +119,9 @@ GameObject:
   - component: {fileID: 1099591859027653194}
   - component: {fileID: 6622300376950577755}
   - component: {fileID: 2813993755782997408}
-  m_Layer: 0
+  - component: {fileID: 2576281201016657734}
+  - component: {fileID: 7179025398847501338}
+  m_Layer: 6
   m_Name: RapidFireTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,11 +136,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2631956058810833165}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2948422094159204662}
   - {fileID: 7937432268020397334}
   - {fileID: 5166240670412780679}
   - {fileID: 496560904647185237}
@@ -156,6 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfbe21a5f8bf16499f959b671f2e8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2445720590532499150, guid: 4709737e99060f4478d1a67aef51da89, type: 3}
+  firePoint: {fileID: 2948422094159204662}
   enemyTag: Enemy
 --- !u!114 &2813993755782997408
 MonoBehaviour:
@@ -170,6 +175,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 60
+--- !u!114 &2576281201016657734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631956058810833165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f0c96cbace95a47b0221d5525d11ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refundPercent: 0.75
+--- !u!65 &7179025398847501338
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631956058810833165}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 3, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!1 &4168044641911317631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2948422094159204662}
+  m_Layer: 0
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2948422094159204662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4168044641911317631}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1099591859027653194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6845239303805426927
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +252,7 @@ GameObject:
   - component: {fileID: 3307945372867438012}
   - component: {fileID: 8175982488411014273}
   - component: {fileID: 3170372254796396738}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +354,7 @@ GameObject:
   - component: {fileID: 5076372158981468783}
   - component: {fileID: 7333318830772042668}
   - component: {fileID: 3266983227614326432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +446,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -391,7 +461,7 @@ GameObject:
   - component: {fileID: 718798640370037979}
   - component: {fileID: 8668255189526414179}
   - component: {fileID: 7415701765406642589}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

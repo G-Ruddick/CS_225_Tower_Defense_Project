@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerBuilder : MonoBehaviour
 {
@@ -17,12 +18,16 @@ public class TowerBuilder : MonoBehaviour
     public void selectTower(GameObject towerPrefab)
     {
         selectedTowerPrefab = towerPrefab;
-        Debug.Log("selected tower: " + towerPrefab.name);
+        //Debug.Log("selected tower: " + towerPrefab.name);
     }
 
     private void Update()
     {
         if (selectedTowerPrefab == null) return;
+
+        //ignore clicks on UI to prevent placing tower when trying to swap tower placements
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
 
         if (Input.GetMouseButtonDown(0))
             tryPlaceSelectedTower();
@@ -36,12 +41,6 @@ public class TowerBuilder : MonoBehaviour
         {
             int cost = getSelectedTowerCost(selectedTowerPrefab);
 
-            if (MoneyManager.instance == null)
-            {
-                Debug.Log("no moneyManager in scene");
-                return;
-            }
-
             if (!MoneyManager.instance.trySpendMoney(cost))
                 return;
 
@@ -49,7 +48,7 @@ public class TowerBuilder : MonoBehaviour
             placePos.y += yOffset;
 
             Instantiate(selectedTowerPrefab, placePos, Quaternion.identity);
-            Debug.Log("tower placed: " + selectedTowerPrefab.name + " for $" + cost);
+            //Debug.Log("tower placed: " + selectedTowerPrefab.name + " for $" + cost);
         }
     }
 
@@ -59,7 +58,7 @@ public class TowerBuilder : MonoBehaviour
 
         if (costComponent == null)
         {
-            Debug.Log("tower prefab missing towerCost: " + towerPrefab.name + " (defaulting cost to 0)");
+            //Debug.Log("tower prefab missing towerCost: " + towerPrefab.name + " (defaulting cost to 0)");
             return 0;
         }
 

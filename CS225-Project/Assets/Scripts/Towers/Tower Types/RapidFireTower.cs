@@ -14,7 +14,7 @@ public class RapidFireTower : TowerBase
 
     protected override void shoot()
     {
-        Debug.Log("rapid fire tower");
+        //Debug.Log("rapid fire tower");
         base.shoot();
     }
 

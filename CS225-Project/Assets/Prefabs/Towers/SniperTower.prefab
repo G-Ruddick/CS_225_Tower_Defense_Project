@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5427705400179819340}
   - component: {fileID: 3944660793389406019}
   - component: {fileID: 6253322710705836073}
-  m_Layer: 0
+  - component: {fileID: 685677850101721063}
+  - component: {fileID: 5647172599136489950}
+  m_Layer: 6
   m_Name: SniperTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,11 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232722877355136637}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 537314119574309202}
   - {fileID: 8570958085572492888}
   - {fileID: 3756135342813374344}
   - {fileID: 4607692455284922600}
@@ -48,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4f6c5e7edb8334d8e3a88a045c6df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2445720590532499150, guid: 4709737e99060f4478d1a67aef51da89, type: 3}
+  firePoint: {fileID: 537314119574309202}
   enemyTag: Enemy
 --- !u!114 &6253322710705836073
 MonoBehaviour:
@@ -62,6 +67,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 70
+--- !u!114 &685677850101721063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232722877355136637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f0c96cbace95a47b0221d5525d11ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refundPercent: 0.75
+--- !u!65 &5647172599136489950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232722877355136637}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2.5, z: 2}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &2487378596941397292
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +113,7 @@ GameObject:
   - component: {fileID: 1913356349581718934}
   - component: {fileID: 6390952605947952238}
   - component: {fileID: 4306031198896580772}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +215,7 @@ GameObject:
   - component: {fileID: 2476853100606848265}
   - component: {fileID: 1270280104714786461}
   - component: {fileID: 4081043171552125836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,10 +307,41 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7967429842257674903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537314119574309202}
+  m_Layer: 0
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &537314119574309202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7967429842257674903}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5427705400179819340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8130959312186632978
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +353,7 @@ GameObject:
   - component: {fileID: 406599661733670884}
   - component: {fileID: 3764811702085841061}
   - component: {fileID: 8380045866341577970}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +492,7 @@ GameObject:
   - component: {fileID: 6925533158758837248}
   - component: {fileID: 7444530892239623787}
   - component: {fileID: 6106857870883487259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +584,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

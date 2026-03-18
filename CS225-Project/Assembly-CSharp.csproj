@@ -60,22 +60,25 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Towers\Tower Types\CannonTower.cs" />
+    <Compile Include="Assets\Scripts\Towers\ProjectileBase.cs" />
     <Compile Include="Assets\Scripts\Camera Aspect Ratio.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Enemy\FastEnemy.cs" />
     <Compile Include="Assets\Scripts\Towers\TowerCost.cs" />
+    <Compile Include="Assets\Scripts\Towers\Tower Types\RapidFireTower.cs" />
     <Compile Include="Assets\Scripts\PathFollow.cs" />
-    <Compile Include="Assets\Scripts\Towers\CannonTower.cs" />
-    <Compile Include="Assets\Scripts\Towers\TowerBase.cs" />
-    <Compile Include="Assets\Scripts\Towers\SniperTower.cs" />
     <Compile Include="Assets\Scripts\Enemy\SlowEnemy.cs" />
     <Compile Include="Assets\Scripts\Shop\MoneyManager.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerSelector.cs" />
+    <Compile Include="Assets\Scripts\Towers\Tower Types\SniperTower.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerSeller.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\PathMaking.cs" />
     <Compile Include="Assets\Scripts\Towers\TowerBuilder.cs" />
-    <Compile Include="Assets\Scripts\Towers\RapidFireTower.cs" />
     <Compile Include="Assets\Scripts\Shop\TowerShop.cs" />
+    <Compile Include="Assets\Scripts\Towers\Tower Types\TowerBase.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyBase.cs" />
   </ItemGroup>
   <ItemGroup>

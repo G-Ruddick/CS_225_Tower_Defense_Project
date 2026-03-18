@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5160121899939372158}
   - component: {fileID: 6598972967592461023}
   - component: {fileID: 6594882800925063061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,10 +104,41 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1040841975714890213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8735060807254830195}
+  m_Layer: 0
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8735060807254830195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040841975714890213}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8983432831908051861}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113240461545854117
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +150,9 @@ GameObject:
   - component: {fileID: 8983432831908051861}
   - component: {fileID: 8777218834609096934}
   - component: {fileID: 6931443835680496049}
-  m_Layer: 0
+  - component: {fileID: 5807207539484503074}
+  - component: {fileID: 3937645714960414408}
+  m_Layer: 6
   m_Name: CannonTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,11 +167,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113240461545854117}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8735060807254830195}
   - {fileID: 7022301411785680739}
   - {fileID: 6325563737950784244}
   - {fileID: 8826612819904057527}
@@ -156,6 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc839ea219cafd2459338aaac0049213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2445720590532499150, guid: 4709737e99060f4478d1a67aef51da89, type: 3}
+  firePoint: {fileID: 8735060807254830195}
   enemyTag: Enemy
 --- !u!114 &6931443835680496049
 MonoBehaviour:
@@ -170,6 +206,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+--- !u!114 &5807207539484503074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113240461545854117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f0c96cbace95a47b0221d5525d11ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refundPercent: 0.75
+--- !u!65 &3937645714960414408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113240461545854117}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &4043691215929312545
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +252,7 @@ GameObject:
   - component: {fileID: 7781871932179525529}
   - component: {fileID: 963590554457730294}
   - component: {fileID: 2208623387760568174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +344,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -290,7 +360,7 @@ GameObject:
   - component: {fileID: 7533079533434879175}
   - component: {fileID: 9096441210641589646}
   - component: {fileID: 3949637964414168151}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +461,7 @@ GameObject:
   - component: {fileID: 216047255718307529}
   - component: {fileID: 829940134628722939}
   - component: {fileID: 4867594768879985393}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public abstract class TowerBase : MonoBehaviour
 {
+    [SerializeField] protected GameObject projectilePrefab;
+    [SerializeField] protected Transform firePoint;
+
     [System.Serializable]
     public struct towerStats
     {
@@ -83,14 +86,19 @@ public abstract class TowerBase : MonoBehaviour
     {
         if (target == null) return;
 
-        Enemy enemyComponent = target.GetComponent<Enemy>();         //remove once static enemies are gone
-        EnemyBase enemy = target.GetComponent<EnemyBase>();
+        if (projectilePrefab == null || firePoint == null)
+        {
+            //Debug.Log("missing projectile setup on " + gameObject.name);
+            return;
+        }
 
-        if (enemyComponent != null)         //remove once static enemies are gone
-            enemyComponent.takeDamage(damage);
+        GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
-        if (enemy != null)
-            enemy.takeDamage(damage);
+        ProjectileBase projectile = proj.GetComponent<ProjectileBase>();
+        if (projectile != null)
+        {
+            projectile.setTarget(target, damage);
+        }
     }
 
     protected virtual void OnDrawGizmosSelected()
