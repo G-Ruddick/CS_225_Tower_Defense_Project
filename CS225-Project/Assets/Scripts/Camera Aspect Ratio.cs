@@ -5,19 +5,19 @@ public class CameraAspectRatio : MonoBehaviour {
     public Transform cameraPosition;
     public PathMaking pathMaking;
 
-    public int heightRatio;
-    public int widthRatio;
+    public float heightRatio;
+    public float widthRatio;
     public float cameraHeight;
     public float cameraLength;
 
-    void Start() {
+    void Awake() {
         mainCamera = GetComponent<Camera>();
         cameraPosition = GetComponent<Transform>();
 
         heightRatio = pathMaking.mapHeight;
         widthRatio = pathMaking.mapWidth;
 
-        cameraHeight = -heightRatio * 10f / 2f + 5f;
+        cameraHeight = -heightRatio * 10f / 2f + 15f;
         cameraLength = widthRatio * 10f / 2f - 5f;
 
         // positioning the camera to the middle of the tilemap
@@ -27,6 +27,6 @@ public class CameraAspectRatio : MonoBehaviour {
         mainCamera.aspect = widthRatio / heightRatio;
 
         // stting the camera size
-        mainCamera.orthographicSize = widthRatio * 5f;
+        mainCamera.orthographicSize = heightRatio * 5f;
     }
 }
