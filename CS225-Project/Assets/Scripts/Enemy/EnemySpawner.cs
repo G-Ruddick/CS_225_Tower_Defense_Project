@@ -15,6 +15,9 @@ public class EnemySpawner : MonoBehaviour {
     IEnumerator spawnEnemy() {
         // spawning in new enemys
         while (1 == 1) {
+            while (PauseButton.gamePaused) {
+                yield return null;
+            }
             // adding a random spawn point variation
             Vector3 randomSpawnChange = new Vector3(Random.Range(-3.5f, 3.5f), 0, Random.Range(-3.5f, 3.5f));
             

@@ -24,6 +24,11 @@ public class PathFollow : MonoBehaviour {
 
     IEnumerator moveOnTile() {
         do {
+            // checking if the game is paused
+            while (PauseButton.gamePaused) {
+                yield return null;
+            }
+
             Vector3 currentPosition = enemyTransform.position;
             Vector3 currentDirection;
 
@@ -46,11 +51,15 @@ public class PathFollow : MonoBehaviour {
 
             // moving the enemy at a fixed speed and direction until the reach the next tile
             while (Vector3.Distance(enemyTransform.position, currentPosition + currentDirection * 10f) > 0.01f) {
-                enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, currentPosition + currentDirection * 10f, 20f * Time.deltaTime);
+                while (PauseButton.gamePaused) {
+                    yield return null;
+                }
+                
+                enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, 
+                    currentPosition + currentDirection * 10f, 20f * Time.deltaTime);
 
                 yield return null;
             }
-
         }
         while (mapArray.map[currentTile[0], currentTile[1]] > 0);
 
