@@ -29,8 +29,8 @@ public class Heightandwidth : MonoBehaviour {
     public TMP_Text Height_Text; 
     public TMP_Text Width_Text;
 
-    public mapScaleValue Height;
-    public mapScaleValue Width;
+    public static mapScaleValue Height;
+    public static mapScaleValue Width;
 
     void Start() {
         Height = new mapScaleValue();

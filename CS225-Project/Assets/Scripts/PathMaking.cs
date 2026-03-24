@@ -22,12 +22,16 @@ public class PathMaking : MonoBehaviour {
     public GameObject Path_Tile_DL;
     public GameObject Start_Tile;
 
-    public int mapHeight = 8;
-    public int mapWidth = 10;
+    public int mapHeight;
+    public int mapWidth;
     public int[,] map;
     public int[] startingTile = new int[2];
 
     void Awake() {
+        // getting the map height and width from the starting scene
+        mapHeight = Heightandwidth.Height.getSize();
+        mapWidth = Heightandwidth.Width.getSize();
+
         map = pathGeneration(mapHeight,mapWidth);
         displayMap(map);
         mapTileCreation(map);
