@@ -31,6 +31,8 @@ public class PathMaking : MonoBehaviour {
         // getting the map height and width from the starting scene
         mapHeight = Heightandwidth.Height.getSize();
         mapWidth = Heightandwidth.Width.getSize();
+        // mapHeight = 7;
+        // mapWidth = 7;
 
         map = pathGeneration(mapHeight,mapWidth);
         displayMap(map);
