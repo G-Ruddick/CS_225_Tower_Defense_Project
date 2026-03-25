@@ -3,7 +3,9 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
     public PathMaking pathMaking;
-    public GameObject enemy;
+    public GameObject enemyBase;
+    public GameObject enemyFast;
+    public GameObject enemySlow;
 
     Vector3 startingPoint;
     
@@ -21,7 +23,16 @@ public class EnemySpawner : MonoBehaviour {
             // adding a random spawn point variation
             Vector3 randomSpawnChange = new Vector3(Random.Range(-1.5f, 1.5f), 0, Random.Range(-1.5f, 1.5f));
             
-            Instantiate(enemy, startingPoint + randomSpawnChange, Quaternion.identity);
+            int rand = Random.Range(0,5);
+            if (rand == 1) {
+                Instantiate(enemyFast, startingPoint + randomSpawnChange, Quaternion.identity);
+            }
+            else if (rand == 2) {
+                Instantiate(enemySlow, startingPoint + randomSpawnChange, Quaternion.identity);
+            }
+            else {
+                Instantiate(enemyBase, startingPoint + randomSpawnChange, Quaternion.identity);
+            }
 
             // wait time between enemies
             yield return new WaitForSeconds(Random.Range(.2f, 1.5f));

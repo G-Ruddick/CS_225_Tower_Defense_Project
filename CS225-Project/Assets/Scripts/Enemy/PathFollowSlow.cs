@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class PathFollow : MonoBehaviour {
+public class PathFollowSlow : MonoBehaviour {
     public Transform enemyTransform;
     public GameObject Base;
     public PathMaking mapArray;
-    public Enemy enemy;
+    public SlowEnemy enemy;
 
     public int [] currentTile;
 
@@ -15,7 +15,7 @@ public class PathFollow : MonoBehaviour {
         enemyTransform = GetComponent<Transform>();
         Base = GameObject.Find("Base");
         mapArray = Base.GetComponent<PathMaking>();
-        enemy = GetComponent<Enemy>();
+        enemy = GetComponent<SlowEnemy>();
 
         currentTile = (int[]) mapArray.startingTile.Clone();
 
@@ -56,7 +56,7 @@ public class PathFollow : MonoBehaviour {
                 }
                 
                 enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, 
-                    currentPosition + currentDirection * 5f, 20f * Time.deltaTime);
+                    currentPosition + currentDirection * 5f, enemy.getMoveSpeed() * 5f * Time.deltaTime);
 
                 yield return null;
             }
@@ -64,6 +64,6 @@ public class PathFollow : MonoBehaviour {
         while (mapArray.map[currentTile[0], currentTile[1]] > 0);
 
         // killing the enemy if they made it to the end
-        enemy.die();
+        Destroy(this.gameObject);
     }
 }

@@ -50,27 +50,30 @@
     <Compile Include="Assets/Scripts/Towers/Tower Types/CannonTower.cs" />
     <Compile Include="Assets/Scripts/Towers/ProjectileBase.cs" />
     <Compile Include="Assets/Scripts/Camera Aspect Ratio.cs" />
+    <Compile Include="Assets/Scripts/Shop/Start Screen Buttons/Height and width.cs" />
     <Compile Include="Assets/Scripts/Enemy/EnemySpawner.cs" />
     <Compile Include="Assets/Scripts/Enemy/FastEnemy.cs" />
     <Compile Include="Assets/Scripts/Towers/TowerCost.cs" />
     <Compile Include="Assets/Scripts/Towers/Tower Types/RapidFireTower.cs" />
-    <Compile Include="Assets/Scripts/PathFollow.cs" />
+    <Compile Include="Assets/Scripts/Enemy/PathFollowBase.cs" />
+    <Compile Include="Assets/Scripts/Shop/Start Screen Buttons/Play Button.cs" />
+    <Compile Include="Assets/Scripts/Health and gold display.cs" />
+    <Compile Include="Assets/Scripts/Shop/Start Screen Buttons/Exit Game.cs" />
+    <Compile Include="Assets/Scripts/Enemy/PathFollowFast.cs" />
     <Compile Include="Assets/Scripts/Enemy/SlowEnemy.cs" />
+    <Compile Include="Assets/Scripts/Shop/Start Screen Buttons/Pause Button.cs" />
     <Compile Include="Assets/Scripts/Shop/MoneyManager.cs" />
     <Compile Include="Assets/Scripts/Towers/TowerSelector.cs" />
     <Compile Include="Assets/Scripts/Towers/Tower Types/SniperTower.cs" />
-    <Compile Include="Assets/Scripts/Start Screen Buttons/Play Button.cs" />
     <Compile Include="Assets/Scripts/Towers/TowerSeller.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/Enemy/Enemy.cs" />
-    <Compile Include="Assets/Scripts/Start Screen Buttons/Pause Button.cs" />
+    <Compile Include="Assets/Scripts/Enemy/PathFollowSlow.cs" />
     <Compile Include="Assets/Scripts/PathMaking.cs" />
-    <Compile Include="Assets/Scripts/Start Screen Buttons/Height and width.cs" />
     <Compile Include="Assets/Scripts/Towers/TowerBuilder.cs" />
     <Compile Include="Assets/Scripts/Shop/TowerShop.cs" />
     <Compile Include="Assets/Scripts/Towers/Tower Types/TowerBase.cs" />
     <Compile Include="Assets/Scripts/Enemy/EnemyBase.cs" />
-    <Compile Include="Assets/Scripts/Start Screen Buttons/Exit Game.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

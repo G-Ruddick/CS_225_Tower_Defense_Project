@@ -7,7 +7,7 @@ public class FastEnemy : EnemyBase
         base.Awake();
 
         health = 60f;
-        moveSpeed = 5f;
+        moveSpeed = 3f;
     }
 
     protected override void die()

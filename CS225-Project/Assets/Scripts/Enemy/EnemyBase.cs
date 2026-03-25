@@ -20,16 +20,20 @@ public class EnemyBase : MonoBehaviour
             originalColor = enemyRenderer.material.color;
     }
 
-    protected virtual void Update()
-    {
-        moveForward();
+    public float getMoveSpeed() {
+        return moveSpeed;
     }
 
-    //basic movement (replace later)
-    protected virtual void moveForward()
-    {
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-    }
+    // protected virtual void Update()
+    // {
+    //     moveForward();
+    // }
+
+    // // basic movement (replace later)
+    // protected virtual void moveForward()
+    // {
+    //     transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+    // }
 
     public virtual void takeDamage(float amount)
     {
