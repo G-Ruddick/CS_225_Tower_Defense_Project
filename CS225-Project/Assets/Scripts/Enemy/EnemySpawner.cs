@@ -7,9 +7,19 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject enemyFast;
     public GameObject enemySlow;
 
+    public float minTime;
+    public float maxTime;
+    public int enemiesSpawned;
+    public int interval;
+
     Vector3 startingPoint;
     
     void Start() {
+        minTime = 1.25f;
+        maxTime = 2.0f;
+        enemiesSpawned = 0;
+        interval = 10;
+        
         startingPoint = new Vector3(pathMaking.startingTile[1] * 5, 1.05f, pathMaking.startingTile[0] * -5);
         StartCoroutine(spawnEnemy());
     }
@@ -34,8 +44,17 @@ public class EnemySpawner : MonoBehaviour {
                 Instantiate(enemyBase, startingPoint + randomSpawnChange, Quaternion.identity);
             }
 
+            enemiesSpawned++;
+
+            // making enemies spawn faster over time
+            if (enemiesSpawned % interval == 0) {
+                minTime *= .75f;
+                maxTime *= .75f;
+                interval *= 2;
+            }
+
             // wait time between enemies
-            yield return new WaitForSeconds(Random.Range(.2f, 1.5f));
+            yield return new WaitForSeconds(Random.Range(minTime, maxTime));
         }
     }
 }
