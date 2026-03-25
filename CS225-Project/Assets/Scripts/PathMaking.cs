@@ -21,6 +21,7 @@ public class PathMaking : MonoBehaviour {
     public GameObject Path_Tile_DR;
     public GameObject Path_Tile_DL;
     public GameObject Start_Tile;
+    public GameObject End_TIle;
 
     public int mapHeight;
     public int mapWidth;
@@ -269,5 +270,7 @@ public class PathMaking : MonoBehaviour {
             currentTile[1] = nextTile[1];
         }
         while (inputMap[currentTile[0], currentTile[1]] > 0);
+
+        Instantiate(End_TIle, tilePosition + new Vector3(0, 0.01f, 0), Quaternion.identity);
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8564147798075295389}
   - component: {fileID: 637820779006846071}
   - component: {fileID: 4199609462785193844}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Path Tile Up Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

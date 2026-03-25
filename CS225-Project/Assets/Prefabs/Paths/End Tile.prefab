@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 637820779006846071}
   - component: {fileID: 4199609462785193844}
   m_Layer: 0
-  m_Name: Path Tile Left Right
+  m_Name: End Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4dc63b27560ab9c5bbe24b2d3d358f2, type: 2}
+  - {fileID: 2100000, guid: efc15ea4ce39aec85afac8d2f8863d26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

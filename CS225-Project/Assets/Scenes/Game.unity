@@ -1574,6 +1574,10 @@ MonoBehaviour:
   enemyBase: {fileID: 7028484702626331302, guid: 851beb2573f150f70a763764a5a7558a, type: 3}
   enemyFast: {fileID: 5877644346147483548, guid: 837e1276ba91a05dc85df8c3a0c0f6d2, type: 3}
   enemySlow: {fileID: 3708927685867966307, guid: f079bbc917a337831b97fb907575a018, type: 3}
+  minTime: 0
+  maxTime: 0
+  enemiesSpawned: 0
+  interval: 0
 --- !u!4 &911813344
 Transform:
   m_ObjectHideFlags: 0
