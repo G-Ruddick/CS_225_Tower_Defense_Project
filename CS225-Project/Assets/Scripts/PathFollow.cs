@@ -50,13 +50,13 @@ public class PathFollow : MonoBehaviour {
             }
 
             // moving the enemy at a fixed speed and direction until the reach the next tile
-            while (Vector3.Distance(enemyTransform.position, currentPosition + currentDirection * 10f) > 0.01f) {
+            while (Vector3.Distance(enemyTransform.position, currentPosition + currentDirection * 5f) > 0.01f) {
                 while (PauseButton.gamePaused) {
                     yield return null;
                 }
                 
                 enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, 
-                    currentPosition + currentDirection * 10f, 20f * Time.deltaTime);
+                    currentPosition + currentDirection * 5f, 20f * Time.deltaTime);
 
                 yield return null;
             }

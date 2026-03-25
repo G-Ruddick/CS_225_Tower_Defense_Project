@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour {
     Vector3 startingPoint;
     
     void Start() {
-        startingPoint = new Vector3(pathMaking.startingTile[1] * 10, 1.05f, pathMaking.startingTile[0] * -10);
+        startingPoint = new Vector3(pathMaking.startingTile[1] * 5, 1.05f, pathMaking.startingTile[0] * -5);
         StartCoroutine(spawnEnemy());
     }
 
@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour {
                 yield return null;
             }
             // adding a random spawn point variation
-            Vector3 randomSpawnChange = new Vector3(Random.Range(-3.5f, 3.5f), 0, Random.Range(-3.5f, 3.5f));
+            Vector3 randomSpawnChange = new Vector3(Random.Range(-1.5f, 1.5f), 0, Random.Range(-1.5f, 1.5f));
             
             Instantiate(enemy, startingPoint + randomSpawnChange, Quaternion.identity);
 

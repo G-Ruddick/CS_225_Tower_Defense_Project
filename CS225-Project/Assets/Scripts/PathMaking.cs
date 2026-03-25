@@ -181,7 +181,7 @@ public class PathMaking : MonoBehaviour {
         for (int r = 0; r < mapHeight; r++) {
             for (int c = 0; c < mapWidth; c++) {
                 if (inputMap[r,c] == 0) {
-                    Instantiate(Grass_Tile, new Vector3(10f * c, 0, -10f * r), Quaternion.identity);
+                    Instantiate(Grass_Tile, new Vector3(5f * c, 0, -5f * r), Quaternion.identity);
                 }
             }
         }
@@ -193,7 +193,7 @@ public class PathMaking : MonoBehaviour {
         currentTile[1] = startingTile[1];
 
         // Starting tile
-        Vector3 tilePosition = new Vector3(10f * currentTile[1], 0, -10f * currentTile[0]);
+        Vector3 tilePosition = new Vector3(5f * currentTile[1], 0, -5f * currentTile[0]);
         if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 1 || 
         Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 2 ) {
             Instantiate(Path_Tile_LR, tilePosition, Quaternion.identity);
@@ -210,7 +210,7 @@ public class PathMaking : MonoBehaviour {
 
             if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 1) {
                 nextTile[1]++;
-                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+                tilePosition = new Vector3(5f * nextTile[1], 0, -5f * nextTile[0]);
 
                 if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 1) {
                     Instantiate(Path_Tile_LR, tilePosition, Quaternion.identity);
@@ -224,7 +224,7 @@ public class PathMaking : MonoBehaviour {
             }
             else if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 2) {
                 nextTile[1]--;
-                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+                tilePosition = new Vector3(5f * nextTile[1], 0, -5f * nextTile[0]);
 
                 if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 2) {
                     Instantiate(Path_Tile_LR, tilePosition, Quaternion.identity);
@@ -238,7 +238,7 @@ public class PathMaking : MonoBehaviour {
             }
             else if (Mathf.Abs(inputMap[currentTile[0], currentTile[1]]) == 3) {
                 nextTile[0]--;
-                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+                tilePosition = new Vector3(5f * nextTile[1], 0, -5f * nextTile[0]);
 
                 if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 1) {
                     Instantiate(Path_Tile_UL, tilePosition, Quaternion.identity);
@@ -252,7 +252,7 @@ public class PathMaking : MonoBehaviour {
             }
             else {
                 nextTile[0]++;
-                tilePosition = new Vector3(10f * nextTile[1], 0, -10f * nextTile[0]);
+                tilePosition = new Vector3(5f * nextTile[1], 0, -5f * nextTile[0]);
 
                 if (Mathf.Abs(inputMap[nextTile[0], nextTile[1]]) == 1) {
                     Instantiate(Path_Tile_DL, tilePosition, Quaternion.identity);
