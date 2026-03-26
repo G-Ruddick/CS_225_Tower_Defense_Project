@@ -23,10 +23,11 @@ K-tower placement/basic player input (player can place down towers and delete th
 K-tower money system
 K-tower projectile shooting with visible bullet path
 G- UI
+K-enemies drop money upon death
+K-added new enemy to destroy towers & gave towers health
 
 TO DO:
 
-K-enemies drop money
 
 ******************************
 
