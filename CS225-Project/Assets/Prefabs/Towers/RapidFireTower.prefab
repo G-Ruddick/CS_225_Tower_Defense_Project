@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 2813993755782997408}
   - component: {fileID: 2576281201016657734}
   - component: {fileID: 7179025398847501338}
+  - component: {fileID: 1387606951240777221}
   m_Layer: 6
   m_Name: RapidFireTower
   m_TagString: Untagged
@@ -209,6 +210,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 3, z: 5}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1387606951240777221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631956058810833165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9626bb5676f500a448102a2e0b8de4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &4168044641911317631
 GameObject:
   m_ObjectHideFlags: 0

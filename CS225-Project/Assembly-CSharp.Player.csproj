@@ -61,7 +61,61 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Towers\Tower Types\CannonTower.cs" />
+    <Compile Include="Assets\Scripts\Towers\ProjectileBase.cs" />
+    <Compile Include="Assets\Scripts\Camera Aspect Ratio.cs" />
+    <Compile Include="Assets\Scripts\Shop\Start Screen Buttons\Height and width.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemy\FastEnemy.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerCost.cs" />
+    <Compile Include="Assets\Scripts\Towers\Tower Types\RapidFireTower.cs" />
+    <Compile Include="Assets\Scripts\Enemy\PathFollowBase.cs" />
+    <Compile Include="Assets\Scripts\Shop\Start Screen Buttons\Play Button.cs" />
+    <Compile Include="Assets\Scripts\Health and gold display.cs" />
+    <Compile Include="Assets\Scripts\Shop\Start Screen Buttons\Exit Game.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DetonationEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\PathFollowDetonation.cs" />
+    <Compile Include="Assets\Scripts\Enemy\PathFollowFast.cs" />
+    <Compile Include="Assets\Scripts\Enemy\SlowEnemy.cs" />
+    <Compile Include="Assets\Scripts\Shop\Start Screen Buttons\Pause Button.cs" />
+    <Compile Include="Assets\Scripts\Shop\MoneyManager.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerSelector.cs" />
+    <Compile Include="Assets\Scripts\Towers\Tower Types\SniperTower.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerSeller.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\PathFollowSlow.cs" />
+    <Compile Include="Assets\Scripts\PathMaking.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerHealth.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerBuilder.cs" />
+    <Compile Include="Assets\Scripts\Shop\TowerShop.cs" />
+    <Compile Include="Assets\Scripts\Towers\Tower Types\TowerBase.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

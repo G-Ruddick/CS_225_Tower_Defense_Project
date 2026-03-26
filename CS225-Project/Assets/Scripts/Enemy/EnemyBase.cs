@@ -7,6 +7,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float health = 100f;
     [SerializeField] protected float moveSpeed = 2f;
     [SerializeField] protected float flashDuration = 0.15f;
+    [SerializeField] protected int moneyOnDeath = 10;
 
     private Renderer enemyRenderer;
     private Color originalColor;
@@ -23,17 +24,6 @@ public class EnemyBase : MonoBehaviour
     public float getMoveSpeed() {
         return moveSpeed;
     }
-
-    // protected virtual void Update()
-    // {
-    //     moveForward();
-    // }
-
-    // // basic movement (replace later)
-    // protected virtual void moveForward()
-    // {
-    //     transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-    // }
 
     public virtual void takeDamage(float amount)
     {
@@ -63,6 +53,13 @@ public class EnemyBase : MonoBehaviour
     protected virtual void die()
     {
         Debug.Log(gameObject.name + " died");
+
+        //give player coins on enemy death
+        if (MoneyManager.instance != null)
+        {
+            MoneyManager.instance.addMoney(moneyOnDeath);
+        }
+
         Destroy(gameObject);
     }
 }
