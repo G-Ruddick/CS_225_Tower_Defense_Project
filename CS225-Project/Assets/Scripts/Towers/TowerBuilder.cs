@@ -6,6 +6,7 @@ public class TowerBuilder : MonoBehaviour
     public static TowerBuilder instance;
 
     [SerializeField] private LayerMask placementMask;
+    [SerializeField] private LayerMask towerMask;
     [SerializeField] private float yOffset = 0f;
 
     private GameObject selectedTowerPrefab;
@@ -36,8 +37,11 @@ public class TowerBuilder : MonoBehaviour
     private void tryPlaceSelectedTower()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 500f, placementMask))
+        // checking for tower already existsing in spot
+        if (Physics.Raycast(ray, out hit, 500f, towerMask)) {}
+        else if (Physics.Raycast(ray, out hit, 500f, placementMask))
         {
             int cost = getSelectedTowerCost(selectedTowerPrefab);
 
@@ -47,8 +51,12 @@ public class TowerBuilder : MonoBehaviour
             Vector3 placePos = hit.point;
             placePos.y += yOffset;
 
+            // rounding the x and z to snap to the grid
+            placePos.x = Mathf.Round((placePos.x / 5)) * 5;
+            placePos.z = Mathf.Round((placePos.z / 5)) * 5;
+
             Instantiate(selectedTowerPrefab, placePos, Quaternion.identity);
-            //Debug.Log("tower placed: " + selectedTowerPrefab.name + " for $" + cost);
+            // Debug.Log("tower placed: " + selectedTowerPrefab.name + " for $" + cost);
         }
     }
 

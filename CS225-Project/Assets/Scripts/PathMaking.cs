@@ -36,7 +36,7 @@ public class PathMaking : MonoBehaviour {
         // mapWidth = 7;
 
         map = pathGeneration(mapHeight,mapWidth);
-        displayMap(map);
+        // displayMap(map);
         mapTileCreation(map);
     }
 

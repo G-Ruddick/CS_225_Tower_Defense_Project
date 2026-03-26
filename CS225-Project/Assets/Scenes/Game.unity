@@ -205,6 +205,7 @@ MonoBehaviour:
   Path_Tile_DR: {fileID: 8839426446554948702, guid: cf53a15feb83ea90cbe2e1d8e20e7d2b, type: 3}
   Path_Tile_DL: {fileID: 8839426446554948702, guid: 9a2ad4187f12f62fba7d806e36c5e92c, type: 3}
   Start_Tile: {fileID: 8839426446554948702, guid: 630bbf6ab57c4f579af3e926e055b2cd, type: 3}
+  End_TIle: {fileID: 8839426446554948702, guid: 2a43c0fcd7b6602699af5d5c8f924e50, type: 3}
   mapHeight: 8
   mapWidth: 10
   startingTile: 0000000000000000
@@ -1640,6 +1641,9 @@ MonoBehaviour:
   placementMask:
     serializedVersion: 2
     m_Bits: 8
+  towerMask:
+    serializedVersion: 2
+    m_Bits: 0
   yOffset: 1
 --- !u!1 &1121609407
 GameObject:
