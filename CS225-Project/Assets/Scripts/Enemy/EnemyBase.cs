@@ -28,8 +28,7 @@ public class EnemyBase : MonoBehaviour
     public virtual void takeDamage(float amount)
     {
         health -= amount;
-
-        Debug.Log(gameObject.name + " was hit for " + amount + " damage. Remaining health: " + health);
+        //Debug.Log(gameObject.name + " was hit for " + amount + " damage. Remaining health: " + health);
 
         if (enemyRenderer != null)
         {
@@ -52,7 +51,7 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void die()
     {
-        Debug.Log(gameObject.name + " died");
+        //Debug.Log(gameObject.name + " died");
 
         //give player coins on enemy death
         if (MoneyManager.instance != null)

@@ -12,7 +12,7 @@ public class FastEnemy : EnemyBase
 
     protected override void die()
     {
-        Debug.Log(gameObject.name + " died");
+        //Debug.Log(gameObject.name + " died");
         base.die();
     }
 }

@@ -1575,6 +1575,7 @@ MonoBehaviour:
   enemyBase: {fileID: 7028484702626331302, guid: 851beb2573f150f70a763764a5a7558a, type: 3}
   enemyFast: {fileID: 5877644346147483548, guid: 837e1276ba91a05dc85df8c3a0c0f6d2, type: 3}
   enemySlow: {fileID: 3708927685867966307, guid: f079bbc917a337831b97fb907575a018, type: 3}
+  enemyDetonation: {fileID: 1475023689203087000, guid: 9acc40e9b2fabfe44a29aea5cde1d832, type: 3}
   minTime: 0
   maxTime: 0
   enemiesSpawned: 0

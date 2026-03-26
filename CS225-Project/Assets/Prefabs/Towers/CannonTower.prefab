@@ -152,7 +152,6 @@ GameObject:
   - component: {fileID: 6931443835680496049}
   - component: {fileID: 5807207539484503074}
   - component: {fileID: 3937645714960414408}
-  - component: {fileID: 7410806789101712697}
   m_Layer: 6
   m_Name: CannonTower
   m_TagString: Untagged
@@ -206,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf77cb55cd9951488326994ec1fecab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 50
+  cost: 70
 --- !u!114 &5807207539484503074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,21 +238,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 3, z: 5}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &7410806789101712697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113240461545854117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9626bb5676f500a448102a2e0b8de4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
 --- !u!1 &4043691215929312545
 GameObject:
   m_ObjectHideFlags: 0

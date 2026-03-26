@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject enemyBase;
     public GameObject enemyFast;
     public GameObject enemySlow;
+    public GameObject enemyDetonation;
 
     public float minTime;
     public float maxTime;
@@ -39,6 +40,9 @@ public class EnemySpawner : MonoBehaviour {
             }
             else if (rand == 2) {
                 Instantiate(enemySlow, startingPoint + randomSpawnChange, Quaternion.identity);
+            }
+            else if (rand == 3) {
+                Instantiate(enemyDetonation, startingPoint + randomSpawnChange, Quaternion.identity);
             }
             else {
                 Instantiate(enemyBase, startingPoint + randomSpawnChange, Quaternion.identity);

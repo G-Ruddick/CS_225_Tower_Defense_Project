@@ -19,7 +19,7 @@ public class DetonationEnemy : EnemyBase
         Collider[] hits = Physics.OverlapSphere(transform.position, explodeRadius);
         foreach (Collider hit in hits)
         {
-            TowerHealth tower = hit.GetComponent<TowerHealth>();
+            TowerBase tower = hit.GetComponent<TowerBase>();
             if (tower != null)
             {
                 Explode();
@@ -31,7 +31,6 @@ public class DetonationEnemy : EnemyBase
     private void Explode()
     {
         exploded = true;
-        Debug.Log(gameObject.name + " exploded!");
 
         //spawn the explosion particle effect
         if (explosionPrefab != null)
@@ -56,7 +55,7 @@ public class DetonationEnemy : EnemyBase
         Collider[] hits = Physics.OverlapSphere(transform.position, explodeRadius);
         foreach (Collider hit in hits)
         {
-            TowerHealth tower = hit.GetComponent<TowerHealth>();
+            TowerBase tower = hit.GetComponent<TowerBase>();
             if (tower != null)
             {
                 tower.takeDamage(explodeDamage);

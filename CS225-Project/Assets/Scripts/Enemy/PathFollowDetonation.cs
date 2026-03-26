@@ -3,10 +3,6 @@ using System.Collections;
 
 public class PathFollowDetonation : MonoBehaviour
 {
-    [Header("Explosion Settings")]
-    [SerializeField] private float explodeRadius = 3f;
-    [SerializeField] private float explodeDamage = 50f;
-
     [Header("Path Settings")]
     public Transform enemyTransform;
     public GameObject Base;
@@ -28,24 +24,6 @@ public class PathFollowDetonation : MonoBehaviour
         currentTile = (int[])mapArray.startingTile.Clone();
 
         StartCoroutine(MoveOnTile());
-    }
-
-    private void Update()
-    {
-        // Check for towers in explosion radius every frame
-        if (!exploded)
-        {
-            Collider[] hits = Physics.OverlapSphere(transform.position, explodeRadius);
-            foreach (Collider hit in hits)
-            {
-                TowerHealth tower = hit.GetComponent<TowerHealth>();
-                if (tower != null)
-                {
-                    Explode();
-                    break;
-                }
-            }
-        }
     }
 
     private IEnumerator MoveOnTile()
@@ -97,29 +75,5 @@ public class PathFollowDetonation : MonoBehaviour
         // Reached end
         if (!exploded)
             Destroy(gameObject);
-    }
-
-    private void Explode()
-    {
-        exploded = true;
-        Debug.Log(gameObject.name + " exploded!");
-
-        Collider[] hits = Physics.OverlapSphere(transform.position, explodeRadius);
-        foreach (Collider hit in hits)
-        {
-            TowerHealth tower = hit.GetComponent<TowerHealth>();
-            if (tower != null)
-            {
-                tower.takeDamage(explodeDamage);
-            }
-        }
-
-        Destroy(gameObject);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, explodeRadius);
     }
 }

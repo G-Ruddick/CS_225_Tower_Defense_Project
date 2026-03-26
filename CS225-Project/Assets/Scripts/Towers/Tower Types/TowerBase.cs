@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public abstract class TowerBase : MonoBehaviour
 {
@@ -16,16 +17,19 @@ public abstract class TowerBase : MonoBehaviour
     [SerializeField] private string enemyTag = "Enemy";
 
     protected Transform target;
-
     protected float range;
     protected float damage;
     protected float fireRate;
-
+    protected float maxHealth = 100f;
+    private float currentHealth;
     private float fireCountdown;
 
     protected virtual void Awake()
     {
-        applyStats(getStats());
+        towerStats stats = getStats();
+        applyStats(stats);
+
+        currentHealth = maxHealth;
     }
 
     protected virtual void Update()
@@ -70,7 +74,6 @@ public abstract class TowerBase : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
-
             if (distance < shortestDistance)
             {
                 shortestDistance = distance;
@@ -86,19 +89,26 @@ public abstract class TowerBase : MonoBehaviour
     {
         if (target == null) return;
 
-        if (projectilePrefab == null || firePoint == null)
-        {
-            //Debug.Log("missing projectile setup on " + gameObject.name);
-            return;
-        }
-
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-
         ProjectileBase projectile = proj.GetComponent<ProjectileBase>();
         if (projectile != null)
         {
             projectile.setTarget(target, damage);
         }
+    }
+
+    public void takeDamage(float amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0f)
+            die();
+    }
+
+    private void die()
+    {
+        Debug.Log(gameObject.name + " was destroyed by an enemy");
+        Destroy(gameObject);
     }
 
     protected virtual void OnDrawGizmosSelected()
