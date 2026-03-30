@@ -25,6 +25,8 @@ K-tower projectile shooting with visible bullet path
 G- UI
 K-enemies drop money upon death
 K-added new enemy to destroy towers & gave towers health
+G-add player Health and enemy taking health
+G-add death screen
 
 TO DO:
 

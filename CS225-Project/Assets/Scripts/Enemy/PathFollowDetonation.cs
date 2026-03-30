@@ -8,6 +8,7 @@ public class PathFollowDetonation : MonoBehaviour
     public GameObject Base;
     public PathMaking mapArray;
     public EnemyBase enemyBase;
+    public HealthManager healthManager;
 
     public int[] currentTile;
 
@@ -20,6 +21,8 @@ public class PathFollowDetonation : MonoBehaviour
         Base = GameObject.Find("Base");
         mapArray = Base.GetComponent<PathMaking>();
         enemyBase = GetComponent<EnemyBase>();
+
+        healthManager = GameObject.Find("Health Manager").GetComponent<HealthManager>();
 
         currentTile = (int[])mapArray.startingTile.Clone();
 
@@ -75,5 +78,6 @@ public class PathFollowDetonation : MonoBehaviour
         // Reached end
         if (!exploded)
             Destroy(gameObject);
+            healthManager.loseHealth(enemyBase.getPlayerHealthRemoval());
     }
 }

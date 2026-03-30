@@ -8,6 +8,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float moveSpeed = 2f;
     [SerializeField] protected float flashDuration = 0.15f;
     [SerializeField] protected int moneyOnDeath = 10;
+    [SerializeField] protected int playerHealthRemoval = 3;
 
     private Renderer enemyRenderer;
     private Color originalColor;
@@ -23,6 +24,10 @@ public class EnemyBase : MonoBehaviour
 
     public float getMoveSpeed() {
         return moveSpeed;
+    }
+
+    public int getPlayerHealthRemoval() {
+        return playerHealthRemoval;
     }
 
     public virtual void takeDamage(float amount)

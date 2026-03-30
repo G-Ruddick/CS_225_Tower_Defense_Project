@@ -126,7 +126,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   flashDuration: 0.15
   moneyOnDeath: 10
-  explodeRadius: 3
+  explodeRadius: 5.5
   explodeDamage: 50
   explosionPrefab: {fileID: 3699006224991012454, guid: ad23bffdcc053a741bc393fa7222d220, type: 3}
 --- !u!114 &394963276910903407

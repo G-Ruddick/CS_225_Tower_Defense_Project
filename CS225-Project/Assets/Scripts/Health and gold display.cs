@@ -2,11 +2,13 @@ using UnityEngine;
 using TMPro;
 
 public class Healthandgolddisplay : MonoBehaviour {
-    public TMP_Text health_Text;
-    public TMP_Text money_Text;
+    public TMP_Text healthText;
+    public TMP_Text moneyText;
     public MoneyManager moneyManager;
+    public HealthManager healthManager;
 
     void Update() {
-        money_Text.text = "Money: " + moneyManager.getMoney();
+        moneyText.text = "Money: " + moneyManager.getMoney();
+        healthText.text = "Health: " + healthManager.getPlayerHealth();
     }
 }

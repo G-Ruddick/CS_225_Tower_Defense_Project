@@ -8,6 +8,7 @@ public class FastEnemy : EnemyBase
 
         health = 60f;
         moveSpeed = 3f;
+        playerHealthRemoval = 1;
     }
 
     protected override void die()

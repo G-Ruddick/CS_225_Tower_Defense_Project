@@ -6,6 +6,7 @@ public class PathFollowSlow : MonoBehaviour {
     public GameObject Base;
     public PathMaking mapArray;
     public SlowEnemy enemy;
+    public HealthManager healthManager;
 
     public int [] currentTile;
 
@@ -16,6 +17,8 @@ public class PathFollowSlow : MonoBehaviour {
         Base = GameObject.Find("Base");
         mapArray = Base.GetComponent<PathMaking>();
         enemy = GetComponent<SlowEnemy>();
+        
+        healthManager = GameObject.Find("Health Manager").GetComponent<HealthManager>();
 
         currentTile = (int[]) mapArray.startingTile.Clone();
 
@@ -65,5 +68,6 @@ public class PathFollowSlow : MonoBehaviour {
 
         // killing the enemy if they made it to the end
         Destroy(this.gameObject);
+        healthManager.loseHealth(enemy.getPlayerHealthRemoval());
     }
 }

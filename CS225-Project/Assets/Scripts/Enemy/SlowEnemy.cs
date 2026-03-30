@@ -8,6 +8,7 @@ public class SlowEnemy : EnemyBase
 
         health = 200f;
         moveSpeed = 0.75f;
+        playerHealthRemoval = 10;
     }
 
     protected override void die()
