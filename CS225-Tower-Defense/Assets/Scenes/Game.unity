@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2147160586}
         m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
         m_MethodName: returnToStartScreen
         m_Mode: 1

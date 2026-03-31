@@ -335,8 +335,8 @@ MonoBehaviour:
   Height_Down: {fileID: 1327910725}
   Width_UP: {fileID: 2049491166}
   Width_Down: {fileID: 206270972}
-  Height_Text: {fileID: 1006049348}
-  Width_Text: {fileID: 381814500}
+  Height_Text: {fileID: 641946448}
+  Width_Text: {fileID: 737250868}
 --- !u!1 &381814498
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +921,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
