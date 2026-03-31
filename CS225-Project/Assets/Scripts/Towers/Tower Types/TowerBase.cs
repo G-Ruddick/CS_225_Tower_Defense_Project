@@ -89,6 +89,8 @@ public abstract class TowerBase : MonoBehaviour
     {
         if (target == null) return;
 
+        if (PauseButton.gamePaused) return;
+
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         ProjectileBase projectile = proj.GetComponent<ProjectileBase>();
         if (projectile != null)

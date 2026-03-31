@@ -9,7 +9,7 @@ public class PauseButton : MonoBehaviour {
     
     void Start()
     {
-        gamePaused = false;
+        gamePaused = true;
     }
 
     // Update is called once per frame

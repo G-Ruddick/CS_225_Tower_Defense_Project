@@ -26,6 +26,8 @@ public class ProjectileBase : MonoBehaviour
 
     private void Update()
     {
+        if (PauseButton.gamePaused) return;
+
         if (target != null)
         {
             lastDirection = (target.position - transform.position).normalized;
