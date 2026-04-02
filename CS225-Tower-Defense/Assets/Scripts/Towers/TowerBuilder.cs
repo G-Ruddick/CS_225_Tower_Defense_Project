@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TowerBuilder : MonoBehaviour
-{
+public class TowerBuilder : MonoBehaviour {
     public static TowerBuilder instance;
 
     [SerializeField] private LayerMask placementMask;
@@ -11,19 +10,15 @@ public class TowerBuilder : MonoBehaviour
 
     private GameObject selectedTowerPrefab;
 
-    private void Awake()
-    {
+    private void Awake() {
         instance = this;
     }
 
-    public void selectTower(GameObject towerPrefab)
-    {
+    public void selectTower(GameObject towerPrefab) {
         selectedTowerPrefab = towerPrefab;
-        //Debug.Log("selected tower: " + towerPrefab.name);
     }
 
-    private void Update()
-    {
+    private void Update() {
         if (selectedTowerPrefab == null) return;
 
         //ignore clicks on UI to prevent placing tower when trying to swap tower placements
@@ -34,15 +29,14 @@ public class TowerBuilder : MonoBehaviour
             tryPlaceSelectedTower();
     }
 
-    private void tryPlaceSelectedTower()
-    {
+    private void tryPlaceSelectedTower() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // checking for tower already existsing in spot
+        //checking for tower already existsing in spot
         if (Physics.Raycast(ray, out hit, 500f, towerMask)) {}
-        else if (Physics.Raycast(ray, out hit, 500f, placementMask))
-        {
+        
+        else if (Physics.Raycast(ray, out hit, 500f, placementMask)) {
             int cost = getSelectedTowerCost(selectedTowerPrefab);
 
             if (!MoneyManager.instance.trySpendMoney(cost))
@@ -51,22 +45,18 @@ public class TowerBuilder : MonoBehaviour
             Vector3 placePos = hit.point;
             placePos.y += yOffset;
 
-            // rounding the x and z to snap to the grid
+            //rounding the x and z to snap to the grid
             placePos.x = Mathf.Round((placePos.x / 5)) * 5;
             placePos.z = Mathf.Round((placePos.z / 5)) * 5;
 
             Instantiate(selectedTowerPrefab, placePos, Quaternion.identity);
-            // Debug.Log("tower placed: " + selectedTowerPrefab.name + " for $" + cost);
         }
     }
 
-    private int getSelectedTowerCost(GameObject towerPrefab)
-    {
+    private int getSelectedTowerCost(GameObject towerPrefab) {
         TowerCost costComponent = towerPrefab.GetComponent<TowerCost>();
 
-        if (costComponent == null)
-        {
-            //Debug.Log("tower prefab missing towerCost: " + towerPrefab.name + " (defaulting cost to 0)");
+        if (costComponent == null) {
             return 0;
         }
 

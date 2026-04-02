@@ -127,7 +127,7 @@ MonoBehaviour:
   health: 100
   moveSpeed: 2
   flashDuration: 0.15
-  moneyOnDeath: 10
+  moneyOnDeath: 25
   playerHealthRemoval: 3
 --- !u!114 &7812090933194284939
 MonoBehaviour:

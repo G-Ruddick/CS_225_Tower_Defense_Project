@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class ProjectileBase : MonoBehaviour
-{
+public class ProjectileBase : MonoBehaviour {
     [SerializeField] private float speed = 20f;
     [SerializeField] private float lifeTime = 2f;
 
@@ -10,13 +9,11 @@ public class ProjectileBase : MonoBehaviour
 
     private Vector3 lastDirection;
 
-    private void Start()
-    {
+    private void Start() {
         Destroy(gameObject, lifeTime);
     }
 
-    public void setTarget(Transform newTarget, float newDamage)
-    {
+    public void setTarget(Transform newTarget, float newDamage) {
         target = newTarget;
         damage = newDamage;
 
@@ -24,12 +21,10 @@ public class ProjectileBase : MonoBehaviour
             lastDirection = (target.position - transform.position).normalized;
     }
 
-    private void Update()
-    {
+    private void Update() {
         if (PauseButton.gamePaused) return;
 
-        if (target != null)
-        {
+        if (target != null) {
             lastDirection = (target.position - transform.position).normalized;
         }
 
@@ -40,32 +35,23 @@ public class ProjectileBase : MonoBehaviour
         transform.forward = lastDirection;
 
         //hit check (distance-based)
-        if (target != null)
-        {
+        if (target != null) {
             float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-            if (distanceToTarget < 0.5f)
-            {
+            if (distanceToTarget < 0.5f) {
                 hitTarget();
             }
         }
     }
 
-    private void hitTarget()
-    {
-        //Debug.Log("projectile hit: " + target.name);
-
-        if (target != null)
-        {
+    private void hitTarget() {
+        if (target != null) {
             EnemyBase enemy = target.GetComponentInParent<EnemyBase>();
 
-            if (enemy != null)
-            {
-                //Debug.Log("damage applied: " + damage);
+            if (enemy != null) {
                 enemy.takeDamage(damage);
             }
         }
-
         Destroy(gameObject);
     }
 }

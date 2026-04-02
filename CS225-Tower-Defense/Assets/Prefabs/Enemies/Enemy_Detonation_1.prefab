@@ -125,7 +125,7 @@ MonoBehaviour:
   health: 100
   moveSpeed: 2
   flashDuration: 0.15
-  moneyOnDeath: 10
+  moneyOnDeath: 35
   playerHealthRemoval: 3
   explodeRadius: 3
   explodeDamage: 50

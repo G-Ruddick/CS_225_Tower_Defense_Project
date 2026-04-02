@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class SlowEnemy : EnemyBase
-{
-    protected override void Awake()
-    {
+public class SlowEnemy : EnemyBase {
+    protected override void Awake() {
         base.Awake();
 
         health = 200f;
@@ -11,8 +9,7 @@ public class SlowEnemy : EnemyBase
         playerHealthRemoval = 10;
     }
 
-    protected override void die()
-    {
+    protected override void die() {
         Debug.Log(gameObject.name + " died");
         base.die();
     }

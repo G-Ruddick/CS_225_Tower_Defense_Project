@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TowerHealth : MonoBehaviour
-{
+public class TowerHealth : MonoBehaviour {
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] protected float flashDuration = 0.15f;
     private float currentHealth;
@@ -11,8 +10,7 @@ public class TowerHealth : MonoBehaviour
     private Color originalColor;
     private Coroutine flashCoroutine;
 
-    private void Awake()
-    {
+    private void Awake() {
         currentHealth = maxHealth;
 
         towerRenderer = GetComponent<Renderer>();
@@ -20,33 +18,26 @@ public class TowerHealth : MonoBehaviour
             originalColor = towerRenderer.material.color;
     }
 
-    public void takeDamage(float amount)
-    {
+    public void takeDamage(float amount) {
         currentHealth -= amount;
-        //Debug.Log(gameObject.name + " took " + amount + " damage. Remaining: " + currentHealth);
 
-        if (towerRenderer != null)
-        {
+        if (towerRenderer != null) {
             if (flashCoroutine != null)
                 StopCoroutine(flashCoroutine);
 
             flashCoroutine = StartCoroutine(flashRed());
         }
-
         if (currentHealth <= 0f)
             die();
     }
 
-    protected virtual IEnumerator flashRed()
-    {
+    protected virtual IEnumerator flashRed() {
         towerRenderer.material.color = Color.red;
         yield return new WaitForSeconds(flashDuration);
         towerRenderer.material.color = originalColor;
     }
 
-    private void die()
-    {
-        Debug.Log(gameObject.name + " was destroyed by an enemy");
+    private void die() {
         Destroy(gameObject);
     }
 }
